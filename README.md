@@ -8,3 +8,6 @@ gcc saxpy_serial.c -o saxpy_s.c -fopenmp
 ./saxpy_s.c
 ```
 
+## SAXPY Parallel
+
+## Taylor Sen(x)
