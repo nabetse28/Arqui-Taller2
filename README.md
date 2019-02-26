@@ -18,3 +18,9 @@ gcc saxpy_paralel.c -o saxpy_p.c -fopenmp
 
 
 ## Taylor Sen(x)
+Este programa lo que hace es calcular la funcion de seno a partir de una serie de taylor, donde se pueden encontrar en [Taylor Series](https://es.wikipedia.org/wiki/Serie_de_Taylor). Este codigo se implemento con 2 funciones una principal y otra auxiliar la cual es la funcion factorial. Para la ejecucion de este programa se debe de abrir el codigo, definir el angulo que se quiere calcular dentro de la funcion principal y cuantos terminos de la serie se quieren utilizar definiendoselos a la variable **n**. La ejecucion del programa se hara de la siguiente forma en terminal.
+
+```bash
+gcc seno.c -o sen.c -fopenmp -lm
+./sen.c
+```
