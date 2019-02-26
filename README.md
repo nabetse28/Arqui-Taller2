@@ -9,5 +9,12 @@ gcc saxpy_serial.c -o saxpy_s.c -fopenmp
 ```
 
 ## SAXPY Parallel
+Este algoritmo es el mismo que el anterior solo que utiliza los pragmas definidos por OPENMP para mejorar el rendimiento del programa. Para compilar se debera de utilizar los siguientes comandos igualmente dentro de la carpeta Arqui-Taller2.
+
+```bash
+gcc saxpy_paralel.c -o saxpy_p.c -fopenmp
+./saxpy_p.c
+```
+
 
 ## Taylor Sen(x)
