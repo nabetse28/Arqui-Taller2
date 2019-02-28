@@ -24,11 +24,10 @@ int factorial(int n){
     int i;
     if( n == 0 || n == 1){
         return 1;
-    }else{
-
-            for(i=1; i <= n; i++){
-                fac = fac * i;
-            }    
+    }else{        
+        for(i=1; i <= n; i++){
+            fac = fac * i;
+        }
         return fac;
     }
 
@@ -47,16 +46,19 @@ int main ()
     float seno = 0.0;
 
     start_time = omp_get_wtime();
-    for(k = 0; k < n; k++){
-        f1 = pow(-1,k);
-        f2 = pow(angle,2*k +1);
-        f = factorial(2*k + 1);
-        seno +=  f1*f2/ f;
+    #pragma opm parallel for private(k,n) reduction(+:seno) 
+    {
+        for(k = 0; k < n; k++){
+            f1 = pow(-1,k);
+            f2 = pow(angle,2*k +1);
+            f = factorial(2*k + 1);
+            seno +=  f1*f2/ f;
+            
+        }
     }
-
     run_time = omp_get_wtime() - start_time;
     printf("seno = %f\n", seno);
-    fflush(stdout);
+    fflush(stdout);    
     printf("The time is %f\n", run_time);
     fflush(stdout);
 
